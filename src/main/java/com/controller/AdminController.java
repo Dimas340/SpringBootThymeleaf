@@ -1,7 +1,7 @@
 package com.controller;
 
-import com.config.repository.RoleRepository;
-import com.config.repository.UserRepository;
+import com.repository.RoleRepository;
+import com.repository.UserRepository;
 import com.model.Role;
 import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.PostConstruct;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 @Controller

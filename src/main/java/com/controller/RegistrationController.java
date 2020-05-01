@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.config.repository.UserRepository;
+import com.repository.UserRepository;
 import com.model.Role;
 import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
