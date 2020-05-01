@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.config.repository.UserRepository;
+import com.model.Role;
 import com.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import web.service.Service;
 
 import java.util.Collections;
 
@@ -27,8 +27,9 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String addUser(Model model, @ModelAttribute("user") User user) {
         final String role = "ROLE_USER";
-        user.setRoles(Collections.singleton());
-        service.addUser(user, role);
+        Role role1 = new Role(role);
+        user.setRoles(Collections.singleton(role1));
+        userRepository.save(user);
         return "redirect:/login";
 
     }
