@@ -16,14 +16,16 @@ import javax.persistence.EntityManagerFactory;
 public class MvcConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/login").setViewName("/login");
+        registry.addViewController("/info").setViewName("user");
+
     }
 
-    @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory managerFactory) {
-        JpaTransactionManager transactionManager = new JpaTransactionManager();
-        transactionManager.setEntityManagerFactory(managerFactory);
-        return transactionManager;
-    }
+//    @Bean
+//    public PlatformTransactionManager transactionManager(EntityManagerFactory managerFactory) {
+//        JpaTransactionManager transactionManager = new JpaTransactionManager();
+//        transactionManager.setEntityManagerFactory(managerFactory);
+//        return transactionManager;
+//    }
 
 }

@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Collections;
 
@@ -19,13 +20,13 @@ public class RegistrationController {
     private UserRepository userRepository;
 
     @GetMapping("/registration")
-    public String registration(Model model) {
-        model.addAttribute("userForm", new User());
+    public String registration() {
+//        model.addAttribute("user", new User());
         return "registration";
     }
 
     @PostMapping("/registration")
-    public String addUser(Model model, @ModelAttribute("user") User user) {
+    public String addUser(@RequestBody User user) {
         final String role = "ROLE_USER";
         Role role1 = new Role(role);
         user.setRoles(Collections.singleton(role1));

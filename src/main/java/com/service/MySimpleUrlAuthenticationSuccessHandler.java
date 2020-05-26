@@ -39,7 +39,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
     private String determineTargetUrl(Authentication authentication) {
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
-        if (roles.contains("ROLE_ADMIN")) {// authorities.size() == 2 переделать
+        if (roles.contains("ROLE_ADMIN")) {
             return "/admin";
         } else  { // if
             return "/user";

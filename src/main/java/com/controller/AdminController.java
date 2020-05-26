@@ -24,7 +24,7 @@ public class AdminController {
     @GetMapping("/admin")
     public String getUsers(ModelMap model) {
         Iterable<User> users = userRepository.findAll();
-        model.addAttribute("get", users);
+        model.addAttribute("users", users);
         return "get";
     }
 
@@ -63,11 +63,7 @@ public class AdminController {
 
     @GetMapping("/admin/delete/*")
     public String deleteUser(@RequestParam Long id) {
-        Optional<User> users = userRepository.findById(id);
-        User user = users.orElse(null);
-        if (user != null) {
-            userRepository.deleteById(user.getId());
-        }
+        userRepository.deleteById(id);// getOne()!!!
         return "redirect:/admin";
     }
 

@@ -16,7 +16,7 @@ public class Role implements GrantedAuthority{
 
     private String role;
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(mappedBy = "roles", cascade = {CascadeType.ALL})
     private Set<User> users = new HashSet<>();
 
     public Role() {}
