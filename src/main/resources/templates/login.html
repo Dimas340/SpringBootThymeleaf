@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+
+    <h1>Авторизуйтесь</h1>
+<form action="#" th:action="@{/login}" method="post">
+    <label for="username">Введите Имя</label>
+    <input type="text" id="username" placeholder="Введите Имя">
+    <label for="password">Введите Пароль</label>
+    <input type="text" id="password" placeholder="Введите Пароль">
+    <input type="submit" value="Create User">
+    <p><a href="/registration">Registration</a></p>
+
+</form>
+</body>
+</html>
