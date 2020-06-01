@@ -25,7 +25,7 @@ public class RegistrationController {
         return "registration";
     }
 
-    @PostMapping("/registration")
+    @PostMapping("/registration")//
     public String addUser(@RequestBody User user) {
         final String role = "ROLE_USER";
         Role role1 = new Role(role);
